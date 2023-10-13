@@ -3,6 +3,9 @@
 from random import randint
 
 
+from graphic_arts.start_game_banner import run_screensaver
+
+
 def attack(char_name: str, char_class: str) -> str:  # type: ignore
     """Describe attack pattern."""
     if char_class == 'warrior':
@@ -26,7 +29,7 @@ def defence(char_name: str, char_class: str) -> str:  # type: ignore
         return f'{char_name} блокировал {10 + randint(2, 5)} урона'
 
 
-def special(char_name: str, char_class: str) -> str: # type: ignore
+def special(char_name: str, char_class: str) -> str:  # type: ignore
     """Describe special ability pattern."""
     if char_class == 'warrior':
         return (f'{char_name} применил специальное умение «Выносливость '
@@ -87,8 +90,8 @@ def choice_char_class() -> str:
     return char_class
 
 
-def main() -> str:  # type: ignore
-    """Game start function."""
+if __name__ == '__main__':
+    run_screensaver()
     print('Приветствую тебя, искатель приключений!')
     print('Прежде чем начать игру...')
     char_name: str = input('...назови себя: ')
